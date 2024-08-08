@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+     async function fetchData() {
+  try {
+    const response = await fetch('https://suitmedia-backend.suitdev.com/api/ideas?page[number]=1&page[size]=10&append[]=small_image&append[]=medium_image&sort=-published_at');
+    const data = await response.json();
+    console.log(data); 
+    renderCards(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+
+const banner = document.querySelector('.banner');
+const text = document.querySelector('.text');
+
+window.addEventListener('scroll', () => {
+  
+  const scrollPosition = window.scrollY;
+
+  const bannerHeight = banner.offsetHeight;
+  const textHeight = text.offsetHeight;
+  const parallaxEffect = (scrollPosition / (window.innerHeight - bannerHeight - textHeight)) * 100;
+
+  banner.style.transform = `translateY(${parallaxEffect}%)`;
+  text.style.transform = `translateY(-${parallaxEffect}%)`;
+});
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-/tTVx6He5vWthUz6t4emG0Twt4C5QmIKY8y+gmsnTVA/F3nOUJ+FHKtZ9zylkqT6y5ycBd4aDTVRIL9aToFY5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suitmedia</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="navhead">
+        <div class="suit">
+            <img height="70px" width="170px" src="suit2.png" alt="">
+        </div>
+
+    <div class="nav">
+        <a>Work</a>
+        <a>About</a>
+        <a>Services</a>
+        <a class="active" href="#ideas">Ideas</a>
+        <a>Career</a>
+        <a>Contact</a>  
+    </div>
+    </div>
+
+    <div class="banner">
+        <img src="bgs.jpg" alt="Banner Image">
+        <div class="banner-text">
+            <h1>Ideas</h1>
+            <h3>Where all our great things begin</h3>
+        </div>
+    </div>
+
+    <div class="sort">
+        <a>Showing 1 - 10 of 100</a>
+        <div class="sortin">
+            <a>Showing per page:<span class="sort-dropdown">
+                <select>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+                <i class="fas fa-caret-down"></i>
+            </span></a>
+
+            <a>Sort by:<span class="sort-dropdown">
+                <select>
+                    <option value="Newest">Newest</option>
+                    <option value="Latest">Latest</option>
+                </select>
+                <i class="fas fa-caret-down"></i>
+            </span></a>
+        </div>
+    </div>
+
+    <div class="PBcard">
+        <div class="card">
+            <img width="250px" height="160px" src="mob.jpeg" alt="">
+            <div class="teks">
+            <p class="tgl">5 SEPTEMBER 2022</p>
+            <p class="capt">Kenali Tingkatan Influencer Berdasarkan Jumlah Followers</p>
+            </div>
+        </div>
+        <div class="card">
+            <img width="250px" height="160px" src="mob.jpeg" alt="">
+            <div class="teks">
+            <p class="tgl">5 SEPTEMBER 2022</p>
+            <p class="capt">Kenali Tingkatan Influencer Berdasarkan Jumlah Followers</p>
+            </div>
+        </div>
+        <div class="card">
+            <img width="250px" height="160px" src="mob.jpeg" alt="">
+            <div class="teks">
+            <p class="tgl">5 SEPTEMBER 2022</p>
+            <p class="capt">Kenali Tingkatan Influencer Berdasarkan Jumlah Followers</p>
+            </div>
+        </div>
+        <div class="card">
+            <img width="250px" height="160px" src="mob.jpeg" alt="">
+            <div class="teks">
+            <p class="tgl">5 SEPTEMBER 2022</p>
+            <p class="capt">Kenali Tingkatan Influencer Berdasarkan Jumlah Followers</p>
+            </div>
+        </div>
+        <div class="card">
+            <img width="250px" height="160px" src="mob.jpeg" alt="">
+            <div class="teks">
+            <p class="tgl">5 SEPTEMBER 2022</p>
+            <p class="capt">Kenali Tingkatan Influencer Berdasarkan Jumlah Followers</p>
+            </div>
+        </div>
+        <div class="card">
+            <img width="250px" height="160px" src="mob.jpeg" alt="">
+            <div class="teks">
+            <p class="tgl">5 SEPTEMBER 2022</p>
+            <p class="capt">Kenali Tingkatan Influencer Berdasarkan Jumlah Followers</p>
+            </div>
+        </div>
+        <div class="card">
+            <img width="250px" height="160px" src="mob.jpeg" alt="">
+            <div class="teks">
+            <p class="tgl">5 SEPTEMBER 2022</p>
+            <p class="capt">Kenali Tingkatan Influencer Berdasarkan Jumlah Followers</p>
+            </div>
+        </div>
+        <div class="card">
+            <img width="250px" height="160px" src="mob.jpeg" alt="">
+            <div class="teks">
+            <p class="tgl">5 SEPTEMBER 2022</p>
+            <p class="capt">Kenali Tingkatan Influencer Berdasarkan Jumlah Followers</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="PBsw">
+        <div class="nums">
+            <a href="#" class="prev"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" class="active1">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#" class="next">5 <i class="fas fa-chevron-right"></i></a>
+          </div>
+    </div>
+     
+    
+</body>
+</html>
